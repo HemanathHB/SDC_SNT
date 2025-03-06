@@ -322,19 +322,19 @@ body {
                </div>
 
              </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"
-                ><i class="icon icon-menu"></i
-              ></span>
-            </button>
+             <button
+             class="navbar-toggler"
+             type="button"
+             data-toggle="collapse"
+             data-target="#navbarNavDropdown"
+             aria-controls="navbarNavDropdown"
+             aria-expanded="false"
+             aria-label="Toggle navigation"
+           >
+             <span class="navbar-toggler-icon">
+               <i id="nav-icon" class="icon icon-menu"></i>
+             </span>
+           </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown" style="font-style: italic; font-weight: bolder;">
               <ul class="navbar-nav ml-auto">
                 <li class="dropdown nav-item active">
@@ -878,41 +878,41 @@ body {
                 
                         <div class="owl-carousel owl-2" >
                           <div class="media-29101">
-                            <a href="#"><img src="images/g-1.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                            <a href="#"><img src="images/SDC1.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                             
                           </div>
                           <div class="media-29101">
-                            <a href="#"><img src="images/g-2.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                            <a href="#"><img src="images/SD2.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                             
                           </div>
                           <div class="media-29101">
-                            <a href="#"><img src="images/g-3.jpg" alt="Image" style="height:300px;width: 400px;" class="img-fluid"></a>
+                            <a href="#"><img src="images/SDC3.png" alt="Image" style="height:300px;width: 400px;" class="img-fluid"></a>
                             
                           </div>
                           <div class="media-29101">
-                            <a href="#"><img src="images/g-4.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                            <a href="#"><img src="images/SDC4.png" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                             
                           </div>
                           
                           <div class="media-29101">
-                            <a href="#"><img src="images/g-6.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                            <a href="#"><img src="images/SDC5.png" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                             
                           </div>
                           
                            <div class="media-29101">
-                             <a href="#"><img src="images/g-9.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                             <a href="#"><img src="images/SDC6.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                              
                            </div>
                            <div class="media-29101">
-                             <a href="#"><img src="images/g-10.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                             <a href="#"><img src="images/SDC7.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                              
                            </div>
                            <div class="media-29101">
-                             <a href="#"><img src="images/g-11.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                             <a href="#"><img src="images/SDC8.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                              
                            </div>
                            <div class="media-29101">
-                             <a href="#"><img src="images/g-12.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
+                             <a href="#"><img src="images/SDC9.jpg" alt="Image"  style="height:300px;width: 400px;"class="img-fluid"></a>
                              
                            </div>
                            <div class="media-29101">
@@ -1049,7 +1049,33 @@ body {
      </div>
     <!-- Body inner end -->
      <script>
+         document.addEventListener("DOMContentLoaded", function () {
+    const navToggler = document.getElementById("navbar-toggler");
+    const navIcon = document.getElementById("nav-icon");
+    const navbarNav = document.getElementById("navbarNavDropdown");
 
+    navToggler.addEventListener("click", function () {
+      // Directly toggle the icon class immediately on click
+      if (navbarNav.classList.contains("show")) {
+        navIcon.classList.remove("icon-close");
+        navIcon.classList.add("icon-menu"); // Switch back to menu icon
+      } else {
+        navIcon.classList.remove("icon-menu");
+        navIcon.classList.add("icon-close"); // Switch to close icon
+      }
+    });
+
+    // Extra reliability: Bootstrap events ensure correct icon state
+    navbarNav.addEventListener("shown.bs.collapse", function () {
+      navIcon.classList.remove("icon-menu");
+      navIcon.classList.add("icon-close");
+    });
+
+    navbarNav.addEventListener("hidden.bs.collapse", function () {
+      navIcon.classList.remove("icon-close");
+      navIcon.classList.add("icon-menu");
+    });
+  });
         var countDownDate = new Date("Mar 17, 2025 23:59:00").getTime();      
         var x = setInterval(function() {
             var now = new Date().getTime();          
