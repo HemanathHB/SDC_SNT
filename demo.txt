@@ -1,0 +1,8 @@
+speaking.html
+images/speakers-speaker5.jpg
+TEDx SDC
+
+writing.html
+images/speakers-speaker6.jpg
+RIGHT TO WRITE
+
